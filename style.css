@@ -105,14 +105,15 @@ body::-webkit-scrollbar {
   }
 
 #bg{
-    background-image: url(assets/main.webp);
+    background-image: url(assets/menu9.gif);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     height: fit-content;
 }
 #CONTENT-SECTION{
-    background: linear-gradient(to right, cyan, blue);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
 }
 #wallpapers{
     display: grid;
