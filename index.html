@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRESCO WALLPAPERS</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" id="favicon">
+</head>
+
+<body id="bg">
+
+    <div id="PL" class="flex flex-col justify-center items-center">
+        <p class="rainbow-text ">LOADING</p>
+        <div class="flex flex-row  justify-between bg-transparent w-4/6 border-none border-transparent p-2 rounded-full" id="mainload">
+            <div class="w-10 h-10 rounded-full bg-red-500 border-solid border-2 border-black" id="liload">
+            </div>
+            <div class="w-10 h-10 rounded-full bg-red-500 border-solid border-2 border-black" id="liload2">
+            </div>
+        </div>
+    </div>
+
+    <div class="MAIN">
+        <div id="NAVBAR-SECTION">
+            <nav class="navbar flex flex-row gap-2 justify-between h-20 items-center p-8">
+                <img src="assets/favicon.png" alt="Wallpaper-img" class="w-8 rounded-full ">
+                <!--The list of buttons on the navigation bar-->
+                <ul class="flex flex-row gap-2" id="NAV-LIST">
+                    <a href="#NAVBAR-SECTION">
+                        <li
+                        class="tooltip text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
+                        <img src="assets/home.png" alt="Home" class="w-7"><span class="tooltiptext">Home</span></li>
+                    </a>
+                    
+                    <a href="#FOOT">
+                    <li
+                        class="tooltip text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
+                        <img src="assets/abt.png" alt="about" class="w-7"><span class="tooltiptext">About</span></li>
+                    </a>
+                    <a href="#wallpapers">
+                        <li
+                        class="tooltip text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white" onclick="reloaderImg()">
+                        <img src="assets/trending.png" alt="Trending" class="w-7"><span class="tooltiptext" >Hot</span>
+                    </li>
+                    </a>
+                       
+                    <li
+                        class="tooltip text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
+                        <img src="assets/star.png" alt="favourites" class="w-7"><span class="tooltiptext">Liked</span>
+                    </li>
+                    <li
+                        class="tooltip text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
+                        <img src="assets/register.png" alt="Sign in" class="w-7"><span class="tooltiptext">Sign
+                            in</span></li>
+                    <li
+                        class="tooltip text-white   rounded-md w-fit m-1 p-2  hover:text-black cursor-pointer hover:bg-white">
+                        <img src="assets/add.png" alt="Sign up" class="w-7"><span class="tooltiptext">Sign Up</span>
+                    </li>
+                </ul>
+                <!--the invisible menu button that pops on smaller screens-->
+                <img src="assets/menu.png" alt="MENU" class="w-8 hover:cursor-pointer" id="hideonpc"
+                    onclick="toggleNavbar()">
+            </nav>
+            <!--The popup after pressing the menu button-->
+            <div class="" id="MENUPOP">
+                <ul class="flex flex-col justify-center items-center gap-2" id="NAV-LIST2">
+                    <a href="#NAVBAR-SECTION">
+                        <li class="text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
+                        Home</li>
+                    </a>
+                    
+                    <a href="#FOOT">
+                        <li class="text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
+                            About</li>
+                    </a>
+                    
+                    <a href="#wallpapers"  >
+                        <li class="text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white" onclick="reloaderImg()">
+                            Trending</li>
+                    </a>
+                    
+                    <li class="text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
+                        liked</li>
+                    <li
+                        class="text-white bg-green-400 rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
+                        Sign in</li>
+                    <li
+                        class="text-white bg-blue-400 rounded-md w-fit m-1 p-2  hover:text-black cursor-pointer hover:bg-white">
+                        Get started</li>
+                </ul>
+                <img src="assets/close.png" alt="" id="CLOSE-BTN" class="w-8 hover:cursor-pointer"
+                    onclick="toggleNavbar()">
+            </div>
+        </div>
+
+        <div class="flex flex-col justify-center items-center w-full h-full" id="landing-page">
+            <div class="flex flex-col">
+                <p class="Heading"><span class="text-white">FRESCO </span><span class="text-cyan-300">WALLPAPERS</span>.
+                </p>
+                <br>
+            </div>
+            <div class="flex flex-row gap-1 border-solid border-2 p-2 w-fit justify-between" id="surch">
+                <input type="text" placeholder="search wallpapers"
+                    class="bg-transparent border-none h-10 w-100 p-2 border-black" id="display">
+                <div id="search" onclick="fetchImages()"><img src="assets/search.png" alt="" class="p-1 w-7"></div>
+            </div>
+            <br><br><br><br>
+            <p class="descriptions text-white">scroll down</p>
+            <br><br><br><br>
+            <div id="scroller">
+                <img src="assets/scroll.png" alt="" class="w-10">
+            </div>
+
+        </div>
+
+        <!--The main content-goes below here-->
+
+        <div id="CONTENT-SECTION" class="justify-center items-center flex flex-col p-3">
+            <br>
+            <br>
+            <p class="heading" id="search-result">Trending</p>
+
+            <div id="wallpapers" class="p-5 m-0 w-full h-fit ">
+            </div>
+
+
+        </div>
+
+        <div class="LOADER nav-buttons flex flex-row justify-center p-5">
+            <button class="bg-cyan-400 p-2 rounded-lg border-solid border-black border-2" id="next">Load More</button>
+        </div>
+
+    </div>
+
+
+    <!--contacts section-->
+    <footer class="footer" id="FOOT">
+        <div class="bg-white flex flex-col p-5 items-center border-black border-2 border-solid justify-center gap-3"
+            id="CONTACTS">
+
+            <div class="flex flex-row gap-5" id="contact-images">
+                <a href="https://github.com/gamerfunky78" target="_blank">
+                    <img src="assets/github.png" alt="github" class="cimg w-10 hover:cursor-pointer">
+                </a>
+                
+                <a href="https://www.instagram.com/bryce._.six/">
+                    <img src="assets/instagram.png" alt="instagram" class="cimg w-10 hover:cursor-pointer">
+                </a>
+
+                <a href="https://twitter.com/BrianAli427" target="_blank">
+                    <img src="assets/twitter.png" alt="twitter" class="cimg w-10 hover:cursor-pointer">
+                </a>
+
+                <a href="https://gamerfunky78.github.io/" target="_blank">
+                    <img src="assets/bag.png" alt="Linkedin" class="cimg w-10 hover:cursor-pointer">
+                </a>
+                
+            </div>
+            <div class="flex flex-col items-center justify-center gap-2" id="CONTACTS">
+                <p>Contact Me on +254795328270.</p>
+                <p>Fresco Wallpapers use the wallhaven Api therefore none of the wallpapers belong to &#169 Fresco
+                    wallpapers.</p>
+                <p class="text-black"><span>&#169</span>2024 || All rights reserved || Brian Ali</p>
+            </div>
+
+
+
+
+            <a href="#NAVBAR-SECTION">
+                <div id="UP-TOP">
+                    <img src="assets/up-arrow.png" alt="back to top" class="w-20">
+                </div>
+            </a>
+
+
+
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>
