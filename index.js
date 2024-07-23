@@ -113,7 +113,6 @@ async function defaultImages() {
 
 window.addEventListener("DOMContentLoaded", () => {
     defaultImages()
-    hidePageLoader()
 });
 
 function downloadImage(event) {
