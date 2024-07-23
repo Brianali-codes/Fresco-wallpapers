@@ -132,15 +132,18 @@ function reloaderImg(){
     wallpapers1.innerHTML = ""
     defaultImages()
 }
-function hidePageLoader(){
-    let loader = document.getElementById("PL")
-    loader.style.display = "none"
+
+let loader = document.getElementById("PL");
+let targetImg; // Declare without initial value
+
+// Check if elements exist
+if (loader && (targetImg = document.getElementById("bg"))) {
+  targetImg.onload = function() {
+    loader.style.display = "none";
+  };
+} else {
+  console.error("Elements with IDs 'PL' or 'bg' not found!");
 }
-
-
-
-
-
 
 
 
