@@ -24,7 +24,7 @@ async function fetchImages() {
 
     updateSearch()
     let input = document.getElementById("display").value
-    const corsProxyUrl = "https://api.codetabs.com/v1/proxy?quest="; // CORS Proxy url This was so annoying i had to look it up LOL
+    const corsProxyUrl = 'https://corsproxy.io/?'; // CORS Proxy url This was so annoying i had to look it up LOL
     const mainurl = "https://wallhaven.cc/api/v1/search" // main endpoint for the API. 
 
     const apiKey = "xz8sPhbXuW8qZGrvXex7Nvavrn1v5QhK"
@@ -41,7 +41,7 @@ async function fetchImages() {
         const response = await fetch(url);
         const data = await response.json(); //awaits JSON parsing
 
-        for (let i = 0; i < Math.min(21, data.data.length); i++) { // Limits to 21 images per page
+        for (let i = 0; i < Math.min(24, data.data.length); i++) { // Limits to 24 images per page
 
             const image = data.data[i];
             const imageLink = document.createElement("a");
@@ -77,14 +77,14 @@ async function defaultImages() {
     let pageNumber = 1;
 
     const wallPapers = document.getElementById("wallpapers");
-    const corsProxyUrl = "https://api.codetabs.com/v1/proxy?quest=";
+    const corsProxyUrl = 'https://corsproxy.io/?';
     const url = `${corsProxyUrl}${mainurl}?q=&sorting=random&page=${pageNumber}&purity100&categories100`;
 
     try {
         const response = await fetch(url);
         const data = await response.json(); // JSON PARSER
 
-        for (let i = 0; i < Math.min(21, data.data.length); i++) { // Limits to 21 images per page
+        for (let i = 0; i < Math.min(24, data.data.length); i++) { // Limits to 24 images per page
 
 
             const image = data.data[i];
