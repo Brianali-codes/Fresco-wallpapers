@@ -12,7 +12,7 @@ body::-webkit-scrollbar {
 }
 #MENUPOP{
     display: none;
-    background-image: url(assets/main.png);
+    background-image: url(assets/main.webp);
     background-repeat: no-repeat;
     position: fixed;
     top: 0;
@@ -105,7 +105,7 @@ body::-webkit-scrollbar {
   }
 
 #bg{
-    background-image: url(assets/main.png);
+    background-image: url(assets/main.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
