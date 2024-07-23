@@ -1,0 +1,14 @@
+{
+  "name": "wallpaper-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./public/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.6"
+  }
+}
