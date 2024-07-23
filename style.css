@@ -105,7 +105,7 @@ body::-webkit-scrollbar {
   }
 
 #bg{
-    background-image: url(assets/menu9.gif);
+    background-image: url(assets/main.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
