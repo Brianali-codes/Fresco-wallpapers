@@ -2,7 +2,7 @@
 html{
     scroll-behavior: smooth;
 }
-/* Hide the default scrollbar */
+/* Hide the default scrollbar i think it looks better this way LOL */
 body::-webkit-scrollbar {
     width: 0px;
     height: 0px;
@@ -24,6 +24,7 @@ body::-webkit-scrollbar {
     height: 50vh;
     width: 47vh;
     animation: pop 1s;
+    z-index: 999;
 }
 #CLOSE-BTN{
     position: fixed;
@@ -35,6 +36,10 @@ body::-webkit-scrollbar {
 
 @keyframes pop{
     from{transform: translateX(50px) translateY(-200px);}
+}
+@keyframes slide-in-right{
+    from{transform: translateX(-50px);}
+    to{transform: translateX(0px);}
 }
 .Heading{
     font-family: "Josefin Sans", sans-serif;
@@ -89,10 +94,10 @@ body::-webkit-scrollbar {
     50%{transform: translateY(-40px);}
     100%{transform: translateY(20px);}
 }
-@keyframes rainbowTXT {
-    0% { animation-fill-mode: forwards; color: red; }
-    50% { animation-fill-mode: forwards; color: green; }
-    100% { animation-fill-mode: forwards; color: blue; }
+@keyframes rainbowTXT1 {
+    0% { animation-fill-mode: forwards; background-color: blue; }
+    50% { animation-fill-mode: forwards; background-color: green;}
+    100% { animation-fill-mode: forwards;  background-color: red; }
   }
 @keyframes rotateINVIS{
     0%{transform: rotateZ(360deg);}
@@ -100,8 +105,8 @@ body::-webkit-scrollbar {
 }
 @keyframes rainbowTXT2 {
     0% { animation-fill-mode: forwards; background-color: green; }
-    50% { animation-fill-mode: forwards;  background-color: red;}
-    100% { animation-fill-mode: forwards; background-color: blue; }
+    50% { animation-fill-mode: forwards; background-color: blue;}
+    100% { animation-fill-mode: forwards;  background-color: red; }
   }
 
 #bg{
@@ -113,7 +118,7 @@ body::-webkit-scrollbar {
 }
 #CONTENT-SECTION{
     background-color: transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
 }
 #wallpapers{
     display: grid;
@@ -127,6 +132,30 @@ body::-webkit-scrollbar {
 }
 #contact-images{
     gap: 15px;
+}
+#changeBG{
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: fixed;
+    top: 1;
+    bottom: 70px;
+    left: 0;
+    right: 1;
+    animation: slide-in-right 1s;
+}
+#CHANGEBG{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 1;
+    bottom:40px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 2px;
+    left: 0;
+    right: 1;
 }
 .cimg:hover{
     animation: shake 0.4s;
@@ -204,7 +233,8 @@ body::-webkit-scrollbar {
     background: linear-gradient(to right, cyan, blue);
 }
 #PL{
-    background: linear-gradient(to right, blue, cyan);
+    background-color: transparent;
+    backdrop-filter: blur(100px);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -212,6 +242,59 @@ body::-webkit-scrollbar {
     right: 0;
     z-index: 999;
     display: flex;
+    gap: 30%;
+}
+
+.rainbow-text{
+    font-family: josefin sans,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    animation: rainbowTXT 2s;
+    animation-iteration-count: infinite;
+    font-weight: 900;
+}
+#liload {
+    
+    animation-iteration-count: infinite;
+    background-color: rgb(255, 255, 255);
+    animation: rainbowTXT1 5s;
+    animation-iteration-count: infinite;
+  }
+
+#liload2{
+
+    animation-iteration-count: infinite;
+    background-color: white;
+    animation: rainbowTXT2 5s;
+    animation-iteration-count: infinite;
+  }
+
+
+#mainload{
+    animation: rotateINVIS 3s;
+    animation-iteration-count: infinite;
+    width: 20%;
+  }
+#NXT1{
+    display: none;
+}
+#NXT2{
+    display: flex;
+}
+#changeBG{
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+} 
+
+#changeBG button{
+    height: 50px;
+    width: 100px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color: white;
+}
+.oh{
+    text-align: center;
 }
 @media (max-width: 700px){
     #hideonpc{
@@ -239,36 +322,8 @@ body::-webkit-scrollbar {
     #CONTACTS{
         text-align: center;
     }
+    #mainload{
+        width: 50%;
+    }
 }
-.rainbow-text{
-    font-family: josefin sans,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 30px;
-    animation: rainbowTXT 2s;
-    animation-iteration-count: infinite;
-    font-weight: 900;
-}
-#liload {
-    animation: hoverleft 5s;
-    animation-iteration-count: infinite;
-    background-color: white;
-    animation: rainbowTXT2 5s;
-    animation-iteration-count: infinite;
-  }
-  #liload2{
-    animation: hoverleft 5s;
-    animation-iteration-count: infinite;
-    background-color: white;
-    animation: rainbowTXT2 5s;
-    animation-iteration-count: infinite;
-  }
-
-
-#mainload{
-    animation: rotateINVIS 3s;
-    animation-iteration-count: infinite;
-    width: 70%;
-  }
-
-
-
 
