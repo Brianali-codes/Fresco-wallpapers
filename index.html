@@ -13,9 +13,10 @@
 
 <body id="bg">
 
-    <div id="PL" class="flex flex-col justify-center items-center">
-        <p class="rainbow-text ">LOADING</p>
-        <div class="flex flex-row  justify-between bg-transparent w-4/6 border-none border-transparent p-2 rounded-full" id="mainload">
+    <div id="PL" class="flex flex-col justify-center items-center ">
+        <p class="oh text-white" id="OH!"></p>
+        <span class="text-white">LOADING</span>
+        <div class="flex flex-row  justify-between bg-transparent  border-none border-transparent p-2 rounded-full" id="mainload">
             <div class="w-10 h-10 rounded-full bg-red-500 border-solid border-2 border-black" id="liload">
             </div>
             <div class="w-10 h-10 rounded-full bg-red-500 border-solid border-2 border-black" id="liload2">
@@ -129,8 +130,12 @@
 
         </div>
 
-        <div class="LOADER nav-buttons flex flex-row justify-center p-5">
+        <div class="LOADER nav-buttons flex flex-row justify-center p-5" id="NXT1">
             <button class="bg-cyan-400 p-2 rounded-lg border-solid border-black border-2" id="next">Load More</button>
+        </div>
+
+        <div class="LOADER nav-buttons flex flex-row justify-center p-5" id="NXT2">
+            <button class="bg-cyan-400 p-2 rounded-lg border-solid border-black border-2" id="next2">Load More</button>
         </div>
 
     </div>
@@ -175,6 +180,18 @@
                 </div>
             </a>
 
+
+
+            <div id="CHANGEBG" class="w-8 cursor-pointer">
+                <img src="assets/color-palette.svg" alt="Themes">
+            </div>
+
+            <div id="changeBG" class="bg-transparent">
+                <button id="CB" class="border-solid border-black border-2">Cyberpunk</button>
+                <button id="WARM" class="border-solid border-black border-2">Warm</button>
+                <button id="DARK" class="border-solid border-black border-2">Dark</button>
+                <button id="DEF" class="border-solid border-black border-2">Default</button>
+            </div>
 
 
         </div>
