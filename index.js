@@ -22,6 +22,10 @@ let pageNumber = 1;
 
 async function fetchImages() {
 
+
+    document.getElementById("NXT2").style.display = "none"
+    document.getElementById("NXT1").style.display = "flex"
+
     updateSearch()
     let input = document.getElementById("display").value
     const corsProxyUrl = 'https://corsproxy.io/?'; // CORS Proxy url This was so annoying i had to look it up LOL
@@ -29,7 +33,6 @@ async function fetchImages() {
 
     const apiKey = "xz8sPhbXuW8qZGrvXex7Nvavrn1v5QhK"
     
-    let pageNumber = 1;
 
     const wallPapers = document.getElementById("wallpapers");
     wallPapers.innerHTML = " "
@@ -52,6 +55,7 @@ async function fetchImages() {
             wallPapers.appendChild(imageLink);
             wallPapers.appendChild(imageElement);
             imageLink.appendChild(imageElement)
+            imageElement.style = "border-radius:10px;"
 
             imageLink.href = image.url
             imageLink.target = "_blank"
@@ -65,16 +69,20 @@ async function fetchImages() {
     let NEXT = document.getElementById("next")
 
     NEXT.addEventListener("click", () => {
-        fetchImages()
         pageNumber++;
+        fetchImages()
     });
 
 }
 
+
 async function defaultImages() {
 
+
+    document.getElementById("NXT2").style.display = "flex"
+    document.getElementById("NXT1").style.display = "none"
     const mainurl = "https://wallhaven.cc/api/v1/search"
-    let pageNumber = 1;
+    
 
     const wallPapers = document.getElementById("wallpapers");
     const corsProxyUrl = 'https://corsproxy.io/?';
@@ -84,9 +92,10 @@ async function defaultImages() {
         const response = await fetch(url);
         const data = await response.json(); // JSON PARSER
 
+        console.log(data.data)
+
         for (let i = 0; i < Math.min(24, data.data.length); i++) { // Limits to 24 images per page
-
-
+ 
             const image = data.data[i];
             const imageLink = document.createElement("a");
             const imageElement = document.createElement("img");
@@ -94,19 +103,24 @@ async function defaultImages() {
             wallPapers.appendChild(imageLink);
             wallPapers.appendChild(imageElement);
             imageLink.appendChild(imageElement)
-            imageLink.href = image.url
+            imageLink.href = image.path
             imageLink.target = "_blank"
-            imageElement.dataset.originalUrl = image.path,
-            imageElement.addEventListener("click", downloadImage); // Add event listener for downloading the image from its url in the API.
+            imageElement.dataset.originalUrl = image.url,
+            imageElement.style = "border-radius:10px;"
+
+            imageElement.addEventListener("click", downloadImage); // Add event listener for downloading the image from its url in the API too bad i didnt use it cause i found an easier way and removing it just made my whole code explode LOL...
 
         }
+
+
     } catch (error) {
         console.error("Error fetching images:", error); // Log the error details
     }
 
-    let NEXT = document.getElementById("next")
+    let NEXT2 = document.getElementById("next2")
 
-    NEXT.addEventListener("click", () => {
+    NEXT2.addEventListener("click", () => {
+        pageNumber++;
         defaultImages()
     });
 }
@@ -144,7 +158,46 @@ if (loader && (targetImg = document.getElementById("bg"))) {
   console.error("Elements with IDs 'PL' or 'bg' not found!");
 }
 
+document.getElementById("CHANGEBG").addEventListener('click', changeBgPopup)
+
+function changeBgPopup(){
+    
+    let BG = document.getElementById("changeBG")
+    if(BG.style.display == "none"|| BG.style.display == ""){
+        BG.style.display = "flex"
+    }
+    else{
+        BG.style.display = "none"
+    }
+}
+
+document.getElementById("CB").addEventListener('click', changetoCB)
+document.getElementById("WARM").addEventListener('click', changetoWARM)
+document.getElementById("DARK").addEventListener('click', changetoDARK)
+document.getElementById("DEF").addEventListener('click', changetoDEF)
 
 
+function changetoCB(){
+    document.getElementById("bg").style.backgroundImage = "url(assets/menu9.gif)"
+}
 
+function changetoWARM(){
+    document.getElementById("bg").style.backgroundImage = "url(assets/WARM.webp)"
+}
+function changetoDARK(){
+    document.getElementById("bg").style.backgroundImage = "url(assets/DARK.webp)"
+}
+function changetoDEF(){
+    document.getElementById("bg").style.backgroundImage = "url(assets/main.webp)"
+}
 
+function interact(){
+
+    const remarks = ["Oh man whats this, WIFI? or data connection? LOL", "Check your connection this is taking longer than expected", "These wallpapers are not mine they are from the wallhaven API ", "Fresco means a painting done rapidly in watercolour on wet plaster on a wall or ceiling, so that the colours penetrate the plaster and become fixed as it dries.", "just a moment this is taking longer than expected ", "We are adding more features by we i mean me. LMAO", "Happy browsing cause these wallpapers are so fire."]
+
+    let talk = document.getElementById("OH!")
+
+    talk.textContent = remarks[Math.floor(Math.random() * remarks.length)]
+}
+interact();
+setInterval(interact, 5000);
