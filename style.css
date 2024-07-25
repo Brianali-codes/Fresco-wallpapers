@@ -10,9 +10,16 @@ body::-webkit-scrollbar {
 #hideonpc{
     display: none;
 }
+.home{
+    border-width: 1px;
+    border-radius: 3px;
+}
+.home:hover{
+    box-shadow: 0 4px 8px 0 rgba(133, 133, 133, 0.2), 0 6px 20px 0 rgba(116, 116, 116, 0.19);
+}
 #MENUPOP{
     display: none;
-    background-image: url(assets/main.webp);
+    background-image: url(assets/favicon2\ \(1\).webp);
     background-repeat: no-repeat;
     position: fixed;
     top: 0;
@@ -51,6 +58,18 @@ body::-webkit-scrollbar {
     font-size: 30px;
     font-weight: 900;
 }
+.heading2{
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 25px;
+    border-radius: 4px;
+    border-width: 1px;
+    transition: 0.5s;
+}
+.heading2:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(133, 133, 133, 0.2), 0 6px 20px 0 rgba(116, 116, 116, 0.19);
+    transition: 0.5s;
+}
 #display{
     font-size: 30px;
     font-family: "Josefin Sans", sans-serif;
@@ -59,7 +78,7 @@ body::-webkit-scrollbar {
     width: 90%;
     height: 40px;
     outline: none;
-    color: white;
+    color: black;
 }
 #search{
     border-radius: 90px;
@@ -81,7 +100,7 @@ body::-webkit-scrollbar {
 }
 #surch{
     width: 50vw;
-    border-color: cyan;
+    border-color: black;
     border-radius: 30px;
 }
 @keyframes shake{
@@ -110,15 +129,16 @@ body::-webkit-scrollbar {
   }
 
 #bg{
-    background-image: url(assets/main.webp);
+    background-image: url(assets/favicon2\ \(1\).webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    background-position: top;
     height: fit-content;
 }
 #CONTENT-SECTION{
-    background-color: transparent;
-    backdrop-filter: blur(5px);
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #wallpapers{
     display: grid;
@@ -161,10 +181,12 @@ body::-webkit-scrollbar {
     animation: shake 0.4s;
 }
 #display::placeholder{
-    color: white;
+    color: black;
 }
 #landing-page{
-    height: 80vh;
+    height:40vh;
+    justify-content: flex-end;
+    align-items: center;
 }
 #scroller{
     animation: uptodown 2s;
@@ -179,12 +201,17 @@ body::-webkit-scrollbar {
 .heading{
     font-family: josefin sans,cursive;
 }
+.walls{
+    color: #15eae6;
+}
 .navbar{
-    background-color: black;
+    background-color:white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    padding: 26px;
 }
 /* TOOLTIP CONTAINER*/
 .tooltip {
@@ -196,8 +223,8 @@ body::-webkit-scrollbar {
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 50px;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     text-align: center;
     padding: 5px 0;
     border-radius: 4px;
@@ -230,10 +257,10 @@ body::-webkit-scrollbar {
     left: 1;
 }
 .LOADER{
-    background: linear-gradient(to right, cyan, blue);
+    background-color: white;
 }
 #PL{
-    background-color: transparent;
+    background-color: white;
     backdrop-filter: blur(100px);
     position: fixed;
     top: 0;
@@ -272,7 +299,7 @@ body::-webkit-scrollbar {
 #mainload{
     animation: rotateINVIS 3s;
     animation-iteration-count: infinite;
-    width: 20%;
+    width: 30%;
   }
 #NXT1{
     display: none;
@@ -293,8 +320,12 @@ body::-webkit-scrollbar {
     backdrop-filter: blur(10px);
     color: white;
 }
+#NAV-LIST{
+    gap: 10px;
+}
 .oh{
     text-align: center;
+    font-size: 30px;
 }
 @media (max-width: 700px){
     #hideonpc{
@@ -325,5 +356,138 @@ body::-webkit-scrollbar {
     #mainload{
         width: 50%;
     }
+    #SC{
+        display: flex;
+        flex-direction: row;
+        font-size: 15px;
+    }
+    #CT{
+        display: flex;
+        flex-direction: row;
+        font-size: 15px;
+    }
+    #FC{
+        display: flex;
+        flex-direction: row;
+        font-size: 15px;
+    }
+    .favdes{
+        display: none;
+
+    }
+
+}
+.favdes{
+    font-family: josefin 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+#sort-controls{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    animation: slide-from-top 0.5s ease-out;
+}
+#sort-controls button{
+    width: 25%;
+    height: 40px;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+}
+#sort-controls button:hover{
+    box-shadow: 0 4px 8px 0 rgba(133, 133, 133, 0.2), 0 6px 20px 0 rgba(116, 116, 116, 0.19);
+}
+#Filter-controls{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    animation: slide-from-top 0.5s ease-out;
+}
+#Filter-controls button{
+    width: 25%;
+    height: 40px;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+}
+#Filter-controls button:hover{
+    box-shadow: 0 4px 8px 0 rgba(133, 133, 133, 0.2), 0 6px 20px 0 rgba(116, 116, 116, 0.19);
+}
+#categories{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    animation: slide-from-top 0.5s ease-out;
+}
+#categories button{
+    width: 25%;
+    height: 40px;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+}
+#categories button:hover{
+    box-shadow: 0 4px 8px 0 rgba(133, 133, 133, 0.2), 0 6px 20px 0 rgba(116, 116, 116, 0.19);
 }
 
+#headersorter{
+    padding: 25px;
+}
+
+@keyframes slide-from-top{
+    from{transform: translateY(-10px);}
+    to{transform: translateY(0px);}
+}
+@keyframes slide-from-bottom{
+    from{transform: translateY(10px) scale(0.9);}
+    to{transform: translateY(0px);}
+}
+#search2{
+    width: 30px;
+    border-radius: 40px;
+}
+#maineu{
+    gap: 20px;
+}
+#LOGO{
+    gap: 1px;
+}
+#surch2{
+    padding: 10px;
+    width: 40vw;
+}
+#display2{
+    border: none;
+    outline: none;
+    width: 100%;
+}
+#display2::placeholder{
+    color: black;
+}
+.surcher{
+    background-color: cyan;
+    border-radius: 50px;
+    padding: 5px;
+    border-color: black;
+}
+.surcher:hover{
+    cursor: pointer;
+}
+#surch2{
+    animation: slide-from-bottom 0.5s;
+    transition: 0.5s;
+}
+#SC{
+    font-size: 20px;
+}
+#FC{
+    font-size: 20px;
+}
+#CT{
+    font-size: 20px;
+}
