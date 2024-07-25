@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon" id="favicon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body id="bg">
 
-    <div id="PL" class="flex flex-col justify-center items-center ">
-        <p class="oh text-white" id="OH!"></p>
-        <span class="text-white">LOADING</span>
+    <div id="PL" class="flex flex-col justify-center items-center bg-white ">
+        <p class="oh text-black" id="OH!"></p>
         <div class="flex flex-row  justify-between bg-transparent  border-none border-transparent p-2 rounded-full" id="mainload">
             <div class="w-10 h-10 rounded-full bg-red-500 border-solid border-2 border-black" id="liload">
             </div>
+            <p>LOADING</p>
             <div class="w-10 h-10 rounded-full bg-red-500 border-solid border-2 border-black" id="liload2">
             </div>
         </div>
@@ -26,40 +27,56 @@
 
     <div class="MAIN">
         <div id="NAVBAR-SECTION">
-            <nav class="navbar flex flex-row gap-2 justify-between h-20 items-center p-8">
-                <img src="assets/favicon.svg" alt="Wallpaper-img" class="w-8 rounded-full ">
+            <nav class="navbar flex flex-row gap-2 justify-between h-20 items-center">
+
+                <div class="flex flex-row justify-center p-2" id="maineu">
+
+
+                    <div class="flex flex-row justify-center w-fit" id="LOGO">
+                        <img src="assets/favicon.svg" alt="Wallpaper-img" class="w-8 rounded-full ">
+                        <span class="favdes">Fresco Wallpapers</span>
+                    </div>
+
+
+                </div>
+
+                <div class="flex flex-row justify-between border-solid border-2 rounded-full border-black" id="surch2">
+                        <input type="text" placeholder="search wallpapers" class="" id="display2">
+
+                        <div class="surcher bg-cyan-300" onclick="fetchImages2()">
+                            <img src="assets/search.svg" alt="" id="search2">
+                        </div>
+                        
+                </div>
+                    
+                
                 <!--The list of buttons on the navigation bar-->
-                <ul class="flex flex-row gap-2" id="NAV-LIST">
+                <ul class="flex flex-row gap-2 justify-center items-center" id="NAV-LIST">
+
                     <a href="#NAVBAR-SECTION">
-                        <li
-                        class="tooltip text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
-                        <img src="assets/home.svg" alt="Home" class="w-7"><span class="tooltiptext">Home</span></li>
+                        <button class="home font-bold border-black  border-solid p-2 ">Home</button>
                     </a>
                     
-                    <a href="#FOOT">
-                    <li
-                        class="tooltip text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
-                        <img src="assets/abt.svg" alt="about" class="w-7"><span class="tooltiptext">About</span></li>
-                    </a>
-                    <a href="#wallpapers">
-                        <li
-                        class="tooltip text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white" onclick="reloaderImg()">
-                        <img src="assets/trending.svg" alt="Trending" class="w-7"><span class="tooltiptext" >Hot</span>
-                    </li>
-                    </a>
+                    
+                        <a href="#FOOT">
+                            <button class="home font-bold border-black  border-solid p-2 ">About</button>
+                        </a>
+
+
+                    
+
+                        <a href="#CONTENT-SECTION">
+                            <button class="home font-bold border-black border-solid p-2 ">Trending</button>
+    
+                        </a>
+        
                        
-                    <li
-                        class="tooltip text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
-                        <img src="assets/star.svg" alt="favourites" class="w-7"><span class="tooltiptext">Liked</span>
-                    </li>
-                    <li
-                        class="tooltip text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
-                        <img src="assets/register.svg" alt="Sign in" class="w-7"><span class="tooltiptext">Sign
-                            in</span></li>
-                    <li
-                        class="tooltip text-white   rounded-md w-fit m-1 p-2  hover:text-black cursor-pointer hover:bg-white">
-                        <img src="assets/add.svg" alt="Sign up" class="w-7"><span class="tooltiptext">Sign Up</span>
-                    </li>
+        
+
+                        <a href="#NA">
+                            <button class="home font-bold border-black border-solid p-2 ">Favorites</button>
+    
+                        </a>
                 </ul>
                 <!--the invisible menu button that pops on smaller screens-->
                 <img src="assets/menu.svg" alt="MENU" class="w-8 hover:cursor-pointer" id="hideonpc"
@@ -84,22 +101,16 @@
                     </a>
                     
                     <li class="text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
-                        liked</li>
-                    <li
-                        class="text-white bg-green-400 rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
-                        Sign in</li>
-                    <li
-                        class="text-white bg-blue-400 rounded-md w-fit m-1 p-2  hover:text-black cursor-pointer hover:bg-white">
-                        Get started</li>
+                        favorites</li>
                 </ul>
                 <img src="assets/close.svg" alt="" id="CLOSE-BTN" class="w-8 hover:cursor-pointer"
                     onclick="toggleNavbar()">
             </div>
         </div>
 
-        <div class="flex flex-col justify-center items-center w-full h-full" id="landing-page">
-            <div class="flex flex-col">
-                <p class="Heading"><span class="text-white">FRESCO </span><span class="text-cyan-300">WALLPAPERS</span>.
+        <div class="flex flex-col w-full h-full p-10" id="landing-page">
+            <div class="flex flex-col ">
+                <p class="Heading"><span class="text-black">FRESCO </span><span class="walls">WALLPAPERS</span>.
                 </p>
                 <br>
             </div>
@@ -108,13 +119,6 @@
                     class="bg-transparent border-none h-10 w-100 p-2 border-black" id="display">
                 <div id="search" onclick="fetchImages()"><img src="assets/search.svg" alt="" class="p-1 w-7"></div>
             </div>
-            <br><br><br><br>
-            <p class="descriptions text-white">scroll down</p>
-            <br><br><br><br>
-            <div id="scroller">
-                <img src="assets/scroll.svg" alt="" class="w-10">
-            </div>
-
         </div>
 
         <!--The main content-goes below here-->
@@ -122,9 +126,43 @@
         <div id="CONTENT-SECTION" class="justify-center items-center flex flex-col p-3">
             <br>
             <br>
-            <p class="heading" id="search-result">Trending</p>
+
+            <div class="flex flex-row w-full justify-between" id="headersorter">
+
+
+                <div >   
+                    <p class="heading" id="search-result">Trending</p>
+                </div>
+                <div class="flex flex-row gap-1">
+                    <p class="heading2 border-solid border-black border-2 p-1 " id="SC"><span>&#9870</span> Sort</p>
+                    <p class="heading2 border-solid border-black border-2 p-1 " id="FC"><span>&#9730</span>Filter</p>
+                    <p class="heading2 border-solid border-black border-2 p-1 " id="CT"><span>&#x01C2</span>General</p>
+                </div>
+                
+                
+            </div>
+
+            <div id="sort-controls" class="p-5">
+                <button id="date-added">Date added</button>
+                <button id="randomizer">Random</button>
+                <button id="relevancer">Relevance</button>
+            </div>
+
+            <div id="Filter-controls" class="p-5">
+                <button>Coming soon</button>
+            </div>
+
+            <div id="categories" class="p-5">
+                <button id="people">People</button>
+                <button id="anime">Anime</button>
+                <button id="general">General</button>
+            </div>
+            <br>
 
             <div id="wallpapers" class="p-5 m-0 w-full h-fit ">
+                <img src="assets/loader2.gif" alt="LOADING" id="loader2">
+                <img src="assets/loader2.gif" alt="LOADING" id="loader3">
+                <img src="assets/loader2.gif" alt="LOADING" id="loader4">
             </div>
 
 
@@ -179,12 +217,6 @@
                     <img src="assets/up-arrow.svg" alt="back to top" class="w-20">
                 </div>
             </a>
-
-
-
-            <div id="CHANGEBG" class="w-8 cursor-pointer">
-                <img src="assets/color-palette.svg" alt="Themes">
-            </div>
 
             <div id="changeBG" class="bg-transparent">
                 <button id="CB" class="border-solid border-black border-2">Cyberpunk</button>
