@@ -358,17 +358,17 @@ body::-webkit-scrollbar {
     }
     #SC{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         font-size: 15px;
     }
     #CT{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         font-size: 15px;
     }
     #FC{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         font-size: 15px;
     }
     .favdes{
