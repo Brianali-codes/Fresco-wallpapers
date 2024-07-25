@@ -329,8 +329,7 @@ body::-webkit-scrollbar {
 }
 @media (max-width: 700px){
     #hideonpc{
-        display: block;
-        
+        display: block;    
     }
     #NAV-LIST{
         display: none;
@@ -356,24 +355,28 @@ body::-webkit-scrollbar {
     #mainload{
         width: 50%;
     }
-    #SC{
+    #headersorter{
+        padding: 10px;
         display: flex;
         flex-direction: column;
-        font-size: 15px;
+    }    
+    #SC{
+        display: flex;
+        flex-direction: row;
+        font-size: 5px;
     }
     #CT{
         display: flex;
-        flex-direction: column;
-        font-size: 15px;
+        flex-direction: row;
+        font-size: 5px;
     }
     #FC{
         display: flex;
-        flex-direction: column;
-        font-size: 15px;
+        flex-direction: row;
+        font-size: 5px;
     }
     .favdes{
         display: none;
-
     }
 
 }
