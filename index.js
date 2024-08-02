@@ -153,7 +153,7 @@ async function defaultImages() {
             wallPapers.appendChild(imageLink);
             wallPapers.appendChild(imageElement);
             imageLink.appendChild(imageElement)
-            imageLink.href = image.path
+            imageLink.href = image.url
             imageLink.target = "_blank"
             imageElement.dataset.originalUrl = image.url,
             imageElement.style = "border-radius:10px;"
