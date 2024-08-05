@@ -525,3 +525,14 @@ body::-webkit-scrollbar {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
 }
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    color: #fff;
+    font-size: 24px;
+    margin-top: 20px;
+}
