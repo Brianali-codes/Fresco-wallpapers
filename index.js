@@ -4,7 +4,7 @@ let purity = 100;//ahem rather not say
 let categories = 100; //general = 100, anime = 101, people = 111.
 let sort = "random";//date_added*,relevance, random, views, favorites, toplist
 let wallPapers = document.getElementById("wallpapers")
-let loader = document.getElementById("PL");
+let loader = document.getElementById("LOADER");
 let targetImg; // Declare without initial value
 const triggerElement = document.getElementById("surch");
 const searchBar = document.getElementById("surch2");
