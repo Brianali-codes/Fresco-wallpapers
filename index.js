@@ -357,7 +357,7 @@ async function getJoke(){
       fetch(url,options)
             .then(res => res.json()) // parse response as JSON
             .then(data => {
-              let displayer = document.getElementById("OH!")
+              let displayer = document.getElementById("OH")
               displayer.textContent = data[0].joke
 
             })
