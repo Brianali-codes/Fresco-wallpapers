@@ -369,5 +369,5 @@ async function getJoke(){
 
 }
 
-setInterval(getJoke, 7000)
+setInterval(getJoke, 5000)
 
