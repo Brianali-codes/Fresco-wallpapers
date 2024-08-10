@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://frescowallpapers.netlify.app/sitemap.xml
