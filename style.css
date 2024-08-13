@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     border-bottom-left-radius: 500px;
     height: 50vh;
-    width: 47vh;
+    width: 40vh;
     animation: pop 1s;
     z-index: 999;
 }
