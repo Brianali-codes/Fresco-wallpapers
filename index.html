@@ -13,16 +13,13 @@
 </head>
 
 <body id="bg">
-    
+
     <div class="loader-container" id="LOADER">
         <div class="loader">
             <div class="loader-inner"></div>
         </div>
-        <div class="loading-text" id="OH">Loading...</div>
+        <div class="loading-text">Loading...</div>
     </div>
-
-        
-    
 
     <div class="MAIN">
         <div id="NAVBAR-SECTION">
@@ -32,7 +29,9 @@
 
 
                     <div class="flex flex-row justify-center w-fit" id="LOGO">
-                        <img src="assets/favicon.svg" alt="Wallpaper-img" class="w-8 rounded-full ">
+                        <a href="#NAVBAR-SECTION">
+                            <img src="assets/favicon.svg" alt="Wallpaper-img" class="w-8 rounded-full ">
+                        </a>
                         <span class="favdes">Fresco Wallpapers</span>
                     </div>
 
@@ -69,7 +68,6 @@
     
                         </a>
         
-                       
                 </ul>
                 <!--the invisible menu button that pops on smaller screens-->
                 <img src="assets/menu.svg" alt="MENU" class="w-8 hover:cursor-pointer" id="hideonpc"
@@ -77,6 +75,8 @@
             </nav>
             <!--The popup after pressing the menu button-->
             <div class="" id="MENUPOP">
+                <img src="assets/favicon.svg" alt="" class="icon2">
+                <br>
                 <ul class="flex flex-col justify-center items-center gap-2" id="NAV-LIST2">
                     <a href="#NAVBAR-SECTION">
                         <li class="text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white">
@@ -92,7 +92,6 @@
                         <li class="text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white" onclick="reloaderImg()">
                             Trending</li>
                     </a>
-                    
                 </ul>
                 <img src="assets/close.svg" alt="" id="CLOSE-BTN" class="w-8 hover:cursor-pointer"
                     onclick="toggleNavbar()">
@@ -140,7 +139,7 @@
             </div>
 
             <div id="Filter-controls" class="p-5">
-                <button>SOON</button>
+                <button id="phonesize" onclick="changetoPhone()">soon</button>
             </div>
 
             <div id="categories" class="p-5">
@@ -159,12 +158,31 @@
 
         </div>
 
-        <div class="LOADER nav-buttons flex flex-row justify-center p-5" id="NXT1">
-            <button class="bg-cyan-400 p-2 rounded-lg border-solid border-black border-2" id="next">Load More</button>
-        </div>
+        
 
-        <div class="LOADER nav-buttons flex flex-row justify-center p-5" id="NXT2">
-            <button class="bg-cyan-400 p-2 rounded-lg border-solid border-black border-2" id="next2">Load More</button>
+
+        <div class="w-3/6 flex flex-row justify-between items-center gap-5 p-5 bg-white">
+                
+
+            <div>
+                <button class="pagebutton" id="back"><</button>
+            </div>
+
+            <div class="w-full flex flex-row justify-center items-center gap-5">
+
+                <div class="PP12">
+                    <p class="Page">Page</p>
+                </div>    
+                <button class="pagebutton1"id="1">1</button>
+            </div>
+                
+
+            <div>
+                <button class="pagebutton p-1 flex justify-center" id="NXT1">></button>
+                <button class="pagebutton p-1 flex justify-center" id="NXT2">></button>
+            </div>
+            
+
         </div>
 
     </div>
@@ -199,6 +217,15 @@
                     wallpapers.</p>
                 <p class="text-black"><span>&#169</span>2024 || All rights reserved || Brian Ali</p>
             </div>
+
+
+
+
+            <a href="#NAVBAR-SECTION">
+                <div id="UP-TOP">
+                    <img src="assets/up-arrow.svg" alt="back to top" class="w-16">
+                </div>
+            </a>
 
             <div id="changeBG" class="bg-transparent">
                 <button id="CB" class="border-solid border-black border-2">Cyberpunk</button>
