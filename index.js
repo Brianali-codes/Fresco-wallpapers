@@ -126,6 +126,25 @@ function changetoAnime() {
     categories = "101"
     defaultImages()
 }
+
+let NEXT2 = document.getElementById("NXT2");
+
+    NEXT2.addEventListener("click", () => {
+    pageNumber = pageNumber + 1;
+    defaultImages();
+    pagiNate()
+    });
+
+let NEXT1 = document.getElementById("NXT1");
+
+    NEXT1.addEventListener("click", () => {
+      pageNumber++;
+      fetchImages();
+      pagiNate()
+    });
+
+
+
 //Main functions here.
 async function defaultImages() {
 
@@ -183,13 +202,8 @@ async function defaultImages() {
         console.error("Error fetching images:", error); // Log the error details
     }
 
-    let NEXT2 = document.getElementById("next2")
-
-    NEXT2.addEventListener("click", () => {
-        pageNumber++;
-        defaultImages()
-    });
 }
+
 async function fetchImages() {
 
 
@@ -200,8 +214,6 @@ async function fetchImages() {
     let input = document.getElementById("display").value
     const corsProxyUrl = 'https://corsproxy.io/?'; // CORS Proxy url This was so annoying i had to look it up LOL
     const mainurl = "https://wallhaven.cc/api/v1/search" // main endpoint for the API. 
-
-    const apiKey = "xz8sPhbXuW8qZGrvXex7Nvavrn1v5QhK" // irrelevant for now unless.....................
 
 
     const wallPapers = document.getElementById("wallpapers");
@@ -237,12 +249,8 @@ async function fetchImages() {
         window.alert("Error fetching images:", error); // Log the error details
     }
 
-    let NEXT = document.getElementById("next")
+    
 
-    NEXT.addEventListener("click", () => {
-        pageNumber++;
-        fetchImages()
-    });
 
 }
 ////MAGIC!!!
@@ -305,22 +313,8 @@ async function fetchImages2() {
         window.alert("Error fetching images:", error); // Log the error details
     }
 
-    let NEXT = document.getElementById("next")
-
-    NEXT.addEventListener("click", () => {
-        pageNumber++;
-        fetchImages()
-    });
-
 }
 ///
-
-
-
-
-
-
-
 
 
 
@@ -346,6 +340,7 @@ document.getElementById("anime").addEventListener('click', changetoAnime)
 
 
 async function getJoke(){
+
     let options = {
         method: 'GET',
         headers: { 'x-api-key': 'P5GA/QalIjAbjjMW4BGOdw==LQf1ZnVopDt0AAK9' }
@@ -371,3 +366,6 @@ async function getJoke(){
 
 setInterval(getJoke, 5000)
 
+function pagiNate(){
+    document.getElementById("1").textContent = pageNumber
+}
