@@ -361,6 +361,9 @@ body::-webkit-scrollbar {
     font-size: 30px;
 }
 @media (max-width: 700px){
+    #BTTP{
+        width: 50px;
+    }
     .pagebutton{
         border-radius: 30px;
         background-color: white;
