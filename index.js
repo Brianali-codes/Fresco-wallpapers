@@ -129,7 +129,9 @@ function changetoAnime() {
 
 let NEXT2 = document.getElementById("NXT2");
 
+    
     NEXT2.addEventListener("click", () => {
+    wallPapers.innerHTML = ""
     pageNumber = pageNumber + 1;
     defaultImages();
     pagiNate()
@@ -138,6 +140,7 @@ let NEXT2 = document.getElementById("NXT2");
 let NEXT1 = document.getElementById("NXT1");
 
     NEXT1.addEventListener("click", () => {
+      wallPapers.innerHTML = ""
       pageNumber++;
       fetchImages();
       pagiNate()
