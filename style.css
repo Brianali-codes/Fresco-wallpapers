@@ -360,6 +360,9 @@ body::-webkit-scrollbar {
     text-align: center;
     font-size: 30px;
 }
+#BTTP{
+    width: 64px;
+}
 @media (max-width: 700px){
     #BTTP{
         width: 50px;
