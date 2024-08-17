@@ -8,6 +8,18 @@ let loader = document.getElementById("LOADER");
 let targetImg; // Declare without initial value
 const triggerElement = document.getElementById("surch");
 const searchBar = document.getElementById("surch2");
+const backButton = document.getElementById("back")
+
+
+function makeButton(){
+    if (pageNumber <= 1) {
+        backButton.style.display = "none";
+    } 
+    else {
+        backButton.style.display = "block";
+    }
+}
+
 
 //Mini functions here ...
 function toggleNavbar() {
@@ -146,12 +158,20 @@ let NEXT1 = document.getElementById("NXT1");
       pagiNate()
     });
 
+let backButton1 = document.getElementById("back")
+
+backButton1.addEventListener("click", () => {
+    wallPapers.innerHTML = ""
+    pageNumber = pageNumber - 1;
+    fetchImages();
+    pagiNate()
+  });
 
 
 //Main functions here.
 async function defaultImages() {
 
-
+    makeButton()
     document.getElementById("NXT2").style.display = "flex"
     document.getElementById("NXT1").style.display = "none"
     const mainurl = "https://wallhaven.cc/api/v1/search"
@@ -214,6 +234,7 @@ async function fetchImages() {
     document.getElementById("NXT1").style.display = "flex"
 
     updateSearch()
+    makeButton()
     let input = document.getElementById("display").value
     const corsProxyUrl = 'https://corsproxy.io/?'; // CORS Proxy url This was so annoying i had to look it up LOL
     const mainurl = "https://wallhaven.cc/api/v1/search" // main endpoint for the API. 
@@ -277,6 +298,7 @@ async function fetchImages2() {
     document.getElementById("NXT1").style.display = "flex"
 
     updateSearch()
+    makeButton()
     let input2 = document.getElementById("display2").value
     const corsProxyUrl = 'https://corsproxy.io/?'; // CORS Proxy url This was so annoying i had to look it up LOL
     const mainurl = "https://wallhaven.cc/api/v1/search" // main endpoint for the API. 
@@ -372,3 +394,4 @@ setInterval(getJoke, 5000)
 function pagiNate(){
     document.getElementById("1").textContent = pageNumber
 }
+makeButton()
