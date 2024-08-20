@@ -66,28 +66,6 @@ if (loader && (targetImg = document.getElementById("bg"))) {
 } else {
     getJoke()
 }
-function changeBgPopup() {
-
-    let BG = document.getElementById("changeBG")
-    if (BG.style.display == "none" || BG.style.display == "") {
-        BG.style.display = "flex"
-    }
-    else {
-        BG.style.display = "none"
-    }
-}
-function changetoCB() {
-    document.getElementById("bg").style.backgroundImage = "url(assets/menu9.gif)"
-}
-function changetoWARM() {
-    document.getElementById("bg").style.backgroundImage = "url(assets/WARM.webp)"
-}
-function changetoDARK() {
-    document.getElementById("bg").style.backgroundImage = "url(assets/DARK.webp)"
-}
-function changetoDEF() {
-    document.getElementById("bg").style.backgroundImage = "url(assets/main.webp)"
-}
 function changeSort() {
 
     document.getElementById("categories").style.display = "none"
@@ -347,10 +325,6 @@ async function fetchImages2() {
 
 
 //button clicks organised here (ORGANISED LMAO)//
-document.getElementById("CB").addEventListener('click', changetoCB)
-document.getElementById("WARM").addEventListener('click', changetoWARM)
-document.getElementById("DARK").addEventListener('click', changetoDARK)
-document.getElementById("DEF").addEventListener('click', changetoDEF)
 document.getElementById("SC").addEventListener('click', changeSort)
 document.getElementById("CT").addEventListener('click', changeCategory)
 document.getElementById("FC").addEventListener('click', changeFilter)
@@ -395,3 +369,91 @@ function pagiNate(){
     document.getElementById("1").textContent = pageNumber
 }
 makeButton()
+
+
+
+
+document.getElementById("switchToDark").addEventListener('click', switcher)
+
+
+
+isDark = true;
+
+
+function switcher(){
+    const heading2Elements = document.querySelectorAll(".heading2");
+    const homeElements = document.querySelectorAll(".home");
+    const pagebuttons = document.querySelectorAll(".pagebutton");
+    const buttonss = document.getElementById('switchToDark')
+
+
+    if(isDark){
+
+
+        heading2Elements.forEach(element => {
+            element.style.color = "white"; // Or any other desired style
+            element.style.borderColor = "white"
+            });
+        
+            homeElements.forEach(element => {
+                element.style.color = "white"; // Or any other desired style
+                element.style.borderColor = "white"
+                });
+        
+            pagebuttons.forEach(element => {
+                    element.style.color = "white"; // Or any other desired style
+                    element.style.borderColor = "white"
+                    element.style.backgroundColor = "black"
+                    element.style.borderWidth = "2px"
+                    });
+        
+            document.getElementById("CONTENT-SECTION").style.backgroundColor = "black"
+            document.querySelector(".navbar").style.backgroundColor = "black"
+            document.querySelector(".PAGINATOR").style.backgroundColor = "black"
+            document.querySelector(".footer").style.backgroundColor = "gray"
+            document.querySelector(".heading").style.color = "white"
+            document.querySelector(".favdes").style.color = "white"
+            document.getElementById("surch2").style.borderColor = "white"
+            document.getElementById("display2").style.color = "white"
+            document.querySelector(".Page").style.color = "white"
+            isDark = false;
+
+
+            buttonss.src = "assets/Mul.png"
+            
+        }
+
+    else{
+        heading2Elements.forEach(element => {
+            element.style.color = "black"; // Or any other desired style
+            element.style.borderColor = "black"
+            });
+        
+            homeElements.forEach(element => {
+                element.style.color = "black"; // Or any other desired style
+                element.style.borderColor = "black"
+                });
+        
+            pagebuttons.forEach(element => {
+                    element.style.color = "black"; // Or any other desired style
+                    element.style.borderColor = "black"
+                    element.style.backgroundColor = "white"
+                    element.style.borderWidth = "2px"
+                    });
+        
+            document.getElementById("CONTENT-SECTION").style.backgroundColor = "white"
+            document.querySelector(".navbar").style.backgroundColor = "white"
+            document.querySelector(".PAGINATOR").style.backgroundColor = "white"
+            document.getElementById("FOOT").style.backgroundColor = "white"
+            document.querySelector(".heading").style.color = "black"
+            document.querySelector(".favdes").style.color = "black"
+            document.getElementById("surch2").style.borderColor = "black"
+            document.getElementById("display2").style.color = "white"
+            document.querySelector(".Page").style.color = "black"
+            isDark = true;
+            buttonss.src = "assets/night-mode.png"
+    }
+
+
+}
+    
