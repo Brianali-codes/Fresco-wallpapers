@@ -38,7 +38,7 @@
 
                 </div>
 
-                <div class="flex flex-row justify-between border-solid border-2 rounded-full border-black" id="surch2">
+                <div class="flex flex-row justify-between border-solid border-2 rounded-full" id="surch2">
                         <input type="text" placeholder="search wallpapers" class="" id="display2">
 
                         <div class="surcher bg-cyan-300" onclick="fetchImages2()">
@@ -92,6 +92,10 @@
                         <li class="text-white   rounded-md w-fit m-1 p-2 hover:text-black cursor-pointer hover:bg-white" onclick="reloaderImg()">
                             Trending</li>
                     </a>
+                    <br>
+
+                    <button class="text-white" onclick="switcher()">Dark/light Mode</button>
+
                 </ul>
                 <img src="assets/close.svg" alt="" id="CLOSE-BTN" class="w-8 hover:cursor-pointer"
                     onclick="toggleNavbar()">
@@ -161,7 +165,7 @@
         
 
 
-        <div class="w-full flex flex-row justify-between items-center gap-5 p-5 bg-white">
+        <div class="PAGINATOR w-full flex flex-row justify-between items-center gap-5 p-5 bg-white">
                 
 
             <div>
@@ -190,7 +194,7 @@
 
     <!--contacts section-->
     <footer class="footer" id="FOOT">
-        <div class="bg-white flex flex-col p-5 items-center border-none justify-center gap-3"
+        <div class="flex flex-col p-5 items-center border-none justify-center gap-3"
             id="CONTACTS">
 
             <div class="flex flex-row gap-5" id="contact-images">
@@ -227,15 +231,15 @@
                 </div>
             </a>
 
-            <div id="changeBG" class="bg-transparent">
-                <button id="CB" class="border-solid border-black border-2">Cyberpunk</button>
-                <button id="WARM" class="border-solid border-black border-2">Warm</button>
-                <button id="DARK" class="border-solid border-black border-2">Dark</button>
-                <button id="DEF" class="border-solid border-black border-2">Default</button>
-            </div>
+
 
 
         </div>
+
+        <div>
+            <img src="assets/Mul.png" alt="switch to dark" id="switchToDark">
+        </div>
+
     </footer>
     <script src="index.js"></script>
 </body>
