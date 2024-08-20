@@ -416,6 +416,22 @@ function switcher(){
             document.getElementById("surch2").style.borderColor = "white"
             document.getElementById("display2").style.color = "white"
             document.querySelector(".Page").style.color = "white"
+            document.getElementById("date-added").style.borderColor = "white"
+            document.getElementById("date-added").style.color = "white"
+            document.getElementById("randomizer").style.borderColor = "white"
+            document.getElementById("randomizer").style.color = "white"
+            document.getElementById("relevancer").style.borderColor = "white"
+            document.getElementById("relevancer").style.color = "white"
+            document.getElementById("people").style.borderColor = "white"
+            document.getElementById("people").style.color = "white"
+            document.getElementById("anime").style.borderColor = "white"
+            document.getElementById("anime").style.color = "white"
+            document.getElementById("general").style.borderColor = "white"
+            document.getElementById("general").style.color = "white"
+            document.getElementById("phonesize").style.borderColor = "white"
+            document.getElementById("phonesize").style.color = "white"
+            
+
             isDark = false;
 
 
@@ -450,6 +466,20 @@ function switcher(){
             document.getElementById("surch2").style.borderColor = "black"
             document.getElementById("display2").style.color = "white"
             document.querySelector(".Page").style.color = "black"
+            document.getElementById("date-added").style.borderColor = "black";
+            document.getElementById("date-added").style.color = "black";
+            document.getElementById("randomizer").style.borderColor = "black";
+            document.getElementById("randomizer").style.color = "black";
+            document.getElementById("relevancer").style.borderColor = "black";
+            document.getElementById("relevancer").style.color = "black";
+            document.getElementById("people").style.borderColor = "black";
+            document.getElementById("people").style.color = "black";
+            document.getElementById("anime").style.borderColor = "black";
+            document.getElementById("anime").style.color = "black";
+            document.getElementById("general").style.borderColor = "black";
+            document.getElementById("general").style.color = "black";
+            document.getElementById("phonesize").style.borderColor = "black";
+            document.getElementById("phonesize").style.color = "black";
             isDark = true;
             buttonss.src = "assets/night-mode.png"
     }
