@@ -207,7 +207,6 @@ async function defaultImages() {
 
 async function fetchImages() {
 
-
     document.getElementById("NXT2").style.display = "none"
     document.getElementById("NXT1").style.display = "flex"
 
@@ -228,24 +227,29 @@ async function fetchImages() {
         const response = await fetch(url);
         const data = await response.json(); //awaits JSON parsing
 
-        for (let i = 0; i < Math.min(24, data.data.length); i++) { // Limits to 24 images per page
+        if (data.data.length === 0) {
+            // No more images, show the message
+            document.getElementById("no-more-images").style.display = "flex";
 
-            const image = data.data[i];
-            const imageLink = document.createElement("a");
-            const imageElement = document.createElement("img");
-            imageElement.src = image.thumbs.original; // image url from the API
-            imageElement.dataset.originalUrl = image.path;
-            imageElement.addEventListener("click", downloadImage); // Add event listener
-            wallPapers.appendChild(imageLink);
-            wallPapers.appendChild(imageElement);
-            imageLink.appendChild(imageElement)
-            imageElement.style = "border-radius:10px;"
+        }else {
 
-            imageLink.href = image.url
-            imageLink.target = "_blank"
-
+        for (let i = 0; i < Math.min(30, data.data.length); i++) { // Limits to 24 images per page
+                // Append new images to the container
+                // ... Your code to append images ...
+                const image = data.data[i];
+                const imageLink = document.createElement("a");
+                const imageElement = document.createElement("img");
+                imageElement.src = image.thumbs.original; // image url from the API
+                imageElement.dataset.originalUrl = image.path;
+                imageElement.addEventListener("click", downloadImage); // Add event listener
+                wallPapers.appendChild(imageLink);
+                wallPapers.appendChild(imageElement);
+                imageLink.appendChild(imageElement)
+                imageElement.style = "border-radius:10px;"
+                imageLink.href = image.url
+                imageLink.target = "_blank"
+              }
         }
-        
     }
     catch (error) {
         window.alert("Error fetching images:", error); // Log the error details
@@ -270,8 +274,6 @@ observer.observe(triggerElement);
 
 
 async function fetchImages2() {
-
-
     document.getElementById("NXT2").style.display = "none"
     document.getElementById("NXT1").style.display = "flex"
 
@@ -281,20 +283,27 @@ async function fetchImages2() {
     const corsProxyUrl = 'https://corsproxy.io/?'; // CORS Proxy url This was so annoying i had to look it up LOL
     const mainurl = "https://wallhaven.cc/api/v1/search" // main endpoint for the API. 
 
-    const apiKey = "xz8sPhbXuW8qZGrvXex7Nvavrn1v5QhK" // irrelevant for now unless.....................
-
-
     const wallPapers = document.getElementById("wallpapers");
     wallPapers.innerHTML = " "
 
     const url = `${corsProxyUrl}${mainurl}?q=${input2}&page=${pageNumber}&purity${purity}&categories${categories}&sorting${sort}`;
 
+
+
+    
     try {
 
         const response = await fetch(url);
         const data = await response.json(); //awaits JSON parsing
 
-        for (let i = 0; i < Math.min(24, data.data.length); i++) { // Limits to 24 images per page
+
+        if (data.data.length === 0) {
+            // No more images, show the message
+            document.getElementById("no-more-images").style.display = "flex";
+
+        }else {
+
+        for (let i = 0; i < Math.min(30, data.data.length); i++) { // Limits to 24 images per page
 
             const image = data.data[i];
             const imageLink = document.createElement("a");
@@ -311,6 +320,7 @@ async function fetchImages2() {
             imageLink.target = "_blank"
 
         }
+    }
     }
     catch (error) {
         window.alert("Error fetching images:", error); // Log the error details
@@ -363,7 +373,7 @@ async function getJoke(){
 
 }
 
-setInterval(getJoke, 5000)
+setInterval(getJoke, 7000)
 
 function pagiNate(){
     document.getElementById("1").textContent = pageNumber
@@ -483,7 +493,5 @@ function switcher(){
             isDark = true;
             buttonss.src = "assets/night-mode.png"
     }
-
-
 }
     
