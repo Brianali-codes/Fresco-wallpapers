@@ -177,8 +177,9 @@ body::-webkit-scrollbar {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .endIMg{
-    width: 50%;
-    border-radius: 10000px;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50vw;
     border-color: cyan;
     border-width: 2px;
 }
