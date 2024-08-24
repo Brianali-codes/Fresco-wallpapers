@@ -1,4 +1,4 @@
-//declared thiese variables as global in order to acess them every time I fetch images from the API
+//declared these variables as global in order to access them every time I fetch images from the API
 let pageNumber = 1;
 let purity = 100;//ahem rather not say
 let categories = 100; //general = 100, anime = 101, people = 111.
@@ -230,6 +230,7 @@ async function fetchImages() {
         if (data.data.length === 0) {
             // No more images, show the message
             document.getElementById("no-more-images").style.display = "flex";
+            document.getElementById("ENDER2").textContent = `No more Images for '${input}'`
 
         }else {
 
@@ -315,7 +316,6 @@ async function fetchImages2() {
             wallPapers.appendChild(imageElement);
             imageLink.appendChild(imageElement)
             imageElement.style = "border-radius:10px;"
-
             imageLink.href = image.url
             imageLink.target = "_blank"
 
@@ -440,7 +440,8 @@ function switcher(){
             document.getElementById("general").style.color = "white"
             document.getElementById("phonesize").style.borderColor = "white"
             document.getElementById("phonesize").style.color = "white"
-            
+            document.getElementById("ENDER1").style.color = "white"
+            document.getElementById("ENDER2").style.color = "white"
 
             isDark = false;
 
@@ -495,3 +496,5 @@ function switcher(){
     }
 }
     
+
+
