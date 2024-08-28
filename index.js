@@ -1,6 +1,6 @@
 //declared thiese variables as global in order to acess them every time I fetch images from the API
 let pageNumber = 1;
-let purity = 100;//Dont worry
+let purity = 100;//ahem rather not say
 let categories = 100; //general = 100, anime = 101, people = 111.
 let sort = "random";//*date_added,relevance, random, views, favorites, toplist
 let wallPapers = document.getElementById("wallpapers")
