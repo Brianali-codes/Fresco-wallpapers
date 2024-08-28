@@ -1,8 +1,8 @@
-//declared these variables as global in order to access them every time I fetch images from the API
+//declared thiese variables as global in order to acess them every time I fetch images from the API
 let pageNumber = 1;
 let purity = 100;//ahem rather not say
 let categories = 100; //general = 100, anime = 101, people = 111.
-let sort = "random";//date_added*,relevance, random, views, favorites, toplist
+let sort = "random";//*date_added,relevance, random, views, favorites, toplist
 let wallPapers = document.getElementById("wallpapers")
 let loader = document.getElementById("LOADER");
 let targetImg; // Declare without initial value
@@ -164,7 +164,7 @@ async function defaultImages() {
         const data = await response.json(); // JSON PARSER
 
 
-        for (let i = 0; i < Math.min(24, data.data.length); i++) { // Limits to 24 images per page
+        for (let i = 0; i < Math.min(25, data.data.length); i++) { // Limits to 24 images per page
 
             const image = data.data[i];
             const imageLink = document.createElement("a");
@@ -496,5 +496,4 @@ function switcher(){
     }
 }
     
-
 
