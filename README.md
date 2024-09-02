@@ -4,3 +4,4 @@ utilizes the Wallhaven APi in order to fetch images most images are Anime relate
 
 NB.  the wallpapers in frescowallpapers don't belong to me or frescowallpapers they belong to the wallhaven API
 
+![Screenshot (29)](https://github.com/user-attachments/assets/c0388bd8-b348-4e1a-8268-3cffb4720938)
