@@ -212,7 +212,7 @@ async function fetchImages() {
 
     updateSearch()
     makeButton()
-    let input = document.getElementById("display").value
+    const input = document.getElementById("display").value || document.getElementById("display2").value;
     const corsProxyUrl = 'https://corsproxy.io/?'; // CORS Proxy url This was so annoying i had to look it up LOL
     const mainurl = "https://wallhaven.cc/api/v1/search" // main endpoint for the API. 
 
@@ -273,67 +273,6 @@ const observer = new IntersectionObserver(entries => {
 
 observer.observe(triggerElement);
 
-
-async function fetchImages2() {
-    document.getElementById("NXT2").style.display = "none"
-    document.getElementById("NXT1").style.display = "flex"
-
-    updateSearch()
-    makeButton()
-    let input2 = document.getElementById("display2").value
-    const corsProxyUrl = 'https://corsproxy.io/?'; // CORS Proxy url This was so annoying i had to look it up LOL
-    const mainurl = "https://wallhaven.cc/api/v1/search" // main endpoint for the API. 
-
-    const wallPapers = document.getElementById("wallpapers");
-    wallPapers.innerHTML = " "
-
-    const url = `${corsProxyUrl}${mainurl}?q=${input2}&page=${pageNumber}&purity${purity}&categories${categories}&sorting${sort}`;
-
-
-
-    
-    try {
-
-        const response = await fetch(url);
-        const data = await response.json(); //awaits JSON parsing
-
-
-        if (data.data.length === 0) {
-            // No more images, show the message
-            document.getElementById("no-more-images").style.display = "flex";
-
-        }else {
-
-        for (let i = 0; i < Math.min(30, data.data.length); i++) { // Limits to 24 images per page
-
-            const image = data.data[i];
-            const imageLink = document.createElement("a");
-            const imageElement = document.createElement("img");
-            imageElement.src = image.thumbs.original; // image url from the API
-            imageElement.dataset.originalUrl = image.path;
-            imageElement.addEventListener("click", downloadImage); // Add event listener
-            wallPapers.appendChild(imageLink);
-            wallPapers.appendChild(imageElement);
-            imageLink.appendChild(imageElement)
-            imageElement.style = "border-radius:10px;"
-            imageLink.href = image.url
-            imageLink.target = "_blank"
-
-        }
-    }
-    }
-    catch (error) {
-        window.alert("Error fetching images:", error); // Log the error details
-    }
-
-}
-///
-
-
-
-
-
-
 //button clicks organised here (ORGANISED LMAO)//
 document.getElementById("SC").addEventListener('click', changeSort)
 document.getElementById("CT").addEventListener('click', changeCategory)
@@ -387,7 +326,12 @@ document.getElementById("switchToDark").addEventListener('click', switcher)
 
 
 
+
+
 isDark = true;
+
+
+
 
 
 function switcher(){
@@ -496,4 +440,20 @@ function switcher(){
     }
 }
     
+
+let src1 = document.getElementById("search")
+let src2 = document.getElementById("search2")
+
+src1.addEventListener('click', ()=>{
+    pageNumber = 1;
+    fetchImages()
+    pagiNate()
+}) 
+src2.addEventListener('click', ()=>{
+    pageNumber = 1;
+    fetchImages()
+    pagiNate()
+})    
+
+
 
