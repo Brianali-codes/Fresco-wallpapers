@@ -188,7 +188,7 @@ body::-webkit-scrollbar {
     grid-template-columns: repeat(3 ,1fr);
     gap: 10px;
     padding: 20px;
-    background-color: white;
+    background-color: transparent;
 }
 #CONTACTS{
     height: fit-content;
