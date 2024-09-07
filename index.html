@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon" id="favicon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body id="bg">
@@ -40,7 +41,7 @@
                 <div class="flex flex-row justify-between border-solid border-2 rounded-full" id="surch2">
                         <input type="text" placeholder="search wallpapers" class="" id="display2">
 
-                        <div class="surcher bg-cyan-300" onclick="fetchImages2()">
+                        <div class="surcher bg-cyan-300" onclick="fetchImages()">
                             <img src="assets/search.svg" alt="" id="search2">
                         </div>
                         
@@ -110,7 +111,7 @@
             <div class="flex flex-row gap-1 border-solid border-2 p-2 w-fit justify-between" id="surch">
                 <input type="text" placeholder="search wallpapers"
                     class="bg-transparent border-none h-10 w-100 p-2 border-black" id="display">
-                <div id="search" onclick="fetchImages()"><img src="assets/search.svg" alt="" class="p-1 w-7"></div>
+                <div id="search"><img src="assets/search.svg" alt="" class="p-1 w-7"></div>
             </div>
         </div>
 
@@ -126,18 +127,12 @@
                 <div >   
                     <p class="heading" id="search-result">Trending</p>
                 </div>
+
+                
                 <div class="flex flex-row gap-1">
                     <p class="heading2 border-solid border-black border-2 p-1 " id="SC"><span>&#9870</span> Sort</p>
                     <p class="heading2 border-solid border-black border-2 p-1 " id="FC"><span>&#9730</span>Filter</p>
                     <p class="heading2 border-solid border-black border-2 p-1 " id="CT"><span>&#x01C2</span>General</p>
-                    <div class="dropdown" >
-                        <button class="dropbtn border-solid border-black border-2 p-1" id="CT2">Entries</button>
-                        <div class="dropdown-content">
-                          <a href="#">25</a>
-                          <a href="#">50</a>
-                          <a href="#">100</a>
-                        </div>
-                      </div>
                 </div>
                 
                 
