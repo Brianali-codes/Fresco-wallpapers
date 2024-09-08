@@ -38,7 +38,7 @@ body::-webkit-scrollbar {
     bottom: 1;
     flex-direction: column;
     height: 100%;
-    width: 70%;
+    width: 100%;
     z-index: 999;
     justify-content: center;
     align-items: center;
