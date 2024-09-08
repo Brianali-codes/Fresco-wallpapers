@@ -20,10 +20,13 @@ function makeButton(){
     }
 }
 
+let MENU = document.getElementById("MENUPOP")
+MENU.addEventListener('click', toggleNavbar)
+
 
 //Mini functions here ...
 function toggleNavbar() {
-    let MENU = document.getElementById("MENUPOP")
+    
 
     if (MENU.style.display == "none" || MENU.style.display == "") {
         MENU.style.display = "flex"
@@ -454,6 +457,8 @@ src2.addEventListener('click', ()=>{
     fetchImages()
     pagiNate()
 })    
+
+
 
 
 
