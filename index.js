@@ -221,7 +221,7 @@ async function fetchImages() {
 
 
     const wallPapers = document.getElementById("wallpapers");
-    wallPapers.innerHTML = " "
+    wallPapers.innerHTML = ""
 
     const url = `${corsProxyUrl}${mainurl}?q=${input}&page=${pageNumber}&purity${purity}&categories${categories}&sorting${sort}`;
 
@@ -235,7 +235,10 @@ async function fetchImages() {
             document.getElementById("no-more-images").style.display = "flex";
             document.getElementById("ENDER2").textContent = `No more Images for '${input}'`
 
-        }else {
+        }else 
+        
+        {
+            document.getElementById("no-more-images").style.display = "none";
 
         for (let i = 0; i < Math.min(30, data.data.length); i++) { // Limits to 24 images per page
                 // Append new images to the container
