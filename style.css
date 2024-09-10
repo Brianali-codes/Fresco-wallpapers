@@ -551,6 +551,7 @@ body::-webkit-scrollbar {
     padding: 10px;
     width: 40vw;
     border-color: black;
+    color: cyan;
 }
 #switchToDark{
     width: 40px;
@@ -575,7 +576,10 @@ body::-webkit-scrollbar {
     width: 100%;
     background-color: transparent;
     font-family: josefin sans,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: black;
+    
+}
+.DP2::placeholder{
+    color: cyan;
 }
 #loader2{
     border-radius: 10px;
