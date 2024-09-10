@@ -374,7 +374,7 @@ function switcher(){
             document.querySelector(".heading").style.color = "white"
             document.querySelector(".favdes").style.color = "white"
             document.getElementById("surch2").style.borderColor = "white"
-            document.getElementById("display2").style.color = "white"
+            document.getElementById("display2").classList.add(".PP12");
             document.querySelector(".Page").style.color = "white"
             document.getElementById("date-added").style.borderColor = "white"
             document.getElementById("date-added").style.color = "white"
@@ -399,20 +399,20 @@ function switcher(){
             buttonss.src = "assets/Mul.png"
             
         }
-
+//light mode//
     else{
         heading2Elements.forEach(element => {
-            element.style.color = "black"; // Or any other desired style
+            element.style.color = "black"; 
             element.style.borderColor = "black"
             });
         
             homeElements.forEach(element => {
-                element.style.color = "black"; // Or any other desired style
+                element.style.color = "black"; 
                 element.style.borderColor = "black"
                 });
         
             pagebuttons.forEach(element => {
-                    element.style.color = "black"; // Or any other desired style
+                    element.style.color = "black"; 
                     element.style.borderColor = "black"
                     element.style.backgroundColor = "white"
                     element.style.borderWidth = "2px"
@@ -425,7 +425,6 @@ function switcher(){
             document.querySelector(".heading").style.color = "black"
             document.querySelector(".favdes").style.color = "black"
             document.getElementById("surch2").style.borderColor = "black"
-            document.getElementById("display2").style.color = "white"
             document.querySelector(".Page").style.color = "black"
             document.getElementById("date-added").style.borderColor = "black";
             document.getElementById("date-added").style.color = "black";
@@ -441,6 +440,8 @@ function switcher(){
             document.getElementById("general").style.color = "black";
             document.getElementById("phonesize").style.borderColor = "black";
             document.getElementById("phonesize").style.color = "black";
+            document.getElementById("ENDER1").style.color = "black"
+            document.getElementById("ENDER2").style.color = "black"
             isDark = true;
             buttonss.src = "assets/night-mode.png"
     }
