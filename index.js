@@ -159,7 +159,7 @@ async function defaultImages() {
 
 
     const wallPapers = document.getElementById("wallpapers");
-    const corsProxyUrl = 'https://corsproxy.io/?';
+    const corsProxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
     const url = `${corsProxyUrl}${mainurl}?q=&sorting=${sort}&page=${pageNumber}&purity${purity}&categories${categories}`;
 
     try {
@@ -216,7 +216,7 @@ async function fetchImages() {
     updateSearch()
     makeButton()
     const input = document.getElementById("display").value || document.getElementById("display2").value;
-    const corsProxyUrl = 'https://corsproxy.io/?'; // CORS Proxy url This was so annoying i had to look it up LOL
+    const corsProxyUrl = 'https://api.codetabs.com/v1/proxy?quest='; // CORS Proxy url This was so annoying i had to look it up LOL
     const mainurl = "https://wallhaven.cc/api/v1/search" // main endpoint for the API. 
 
 
